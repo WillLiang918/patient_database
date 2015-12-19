@@ -17,3 +17,5 @@ Route::get('/', function () {
 
 Route::get('about', 'PagesController@about');
 Route::get('contact', 'PagesController@contact');
+Route::get('patients', 'PatientsController@index');
+Route::get('patients/{id}', 'PatientsController@show');
