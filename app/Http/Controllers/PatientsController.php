@@ -36,9 +36,9 @@ class PatientsController extends Controller
 
   public function store(PatientRequest $request)
   {
-    $patient = new Patient($request->all());
+    \Auth::user()->patients()->create($request->all());
 
-    \Auth::user()->patients()->save($patient);
+    flash()->success($request->name . ' has been added to the database.')->important();
 
     return redirect('patients');
   }
@@ -50,6 +50,8 @@ class PatientsController extends Controller
 
   public function update(Patient $patient, PatientRequest $request)
   {
+    flash()->success($patient->name . "'s information has been updated.")->important();
+
     $patient->update($request->all());
 
     return redirect('patients');
