@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use \App\Patient;
 use App\Http\Requests;
+use App\Http\Requests\PatientRequest;
+use Illuminate\HttpResponse;
 use App\Http\Controllers\Controller;
-use Request;
+// use Request;
 
 class PatientsController extends Controller
 {
@@ -28,9 +30,25 @@ class PatientsController extends Controller
     return view('patients.create');
   }
 
-  public function store() {
+  public function store(PatientRequest $request) {
 
-    Patient::create(Request::all());
+    Patient::create($request->all());
+
+    return redirect('patients');
+  }
+
+  public function edit($id)
+  {
+    $patient = Patient::findorfail($id);
+
+    return view('patients.edit', compact('patient'));
+  }
+
+  public function update($id, PatientRequest $request)
+  {
+    $patient = Patient::findorfail($id);
+
+    $patient->update($request->all());
 
     return redirect('patients');
   }
