@@ -14,12 +14,18 @@ class CreatePatientsTable extends Migration
     {
         Schema::create('patients', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
             $table->string('name');
             $table->text('address');
             $table->text('phone_number');
             $table->date('date_of_birth');
             $table->integer('age');
             $table->timestamps();
+
+            $table->foreign('user_id')
+                  ->references('id')
+                  ->on('user')
+                  ->onDelete('cascade');
         });
     }
 
