@@ -13,7 +13,7 @@
 
     <div class="form-group">
       {!! Form::label('address', 'Address:') !!}
-      {!! Form::text('name', null, ['class' => 'form-control']) !!}
+      {!! Form::text('address', null, ['class' => 'form-control']) !!}
     </div>
 
     <div class="form-group">
@@ -23,9 +23,7 @@
 
     <div class="form-group">
       {!! Form::label('date_of_birth', 'Date of Birth:') !!} <br/>
-      {!! Form::selectMonth('month') !!}
-      {!! Form::selectRange('day', 1, 31) !!}
-      {!! Form::selectRange('year', 2015, 1900) !!}
+      {!! Form::input('date', 'date_of_birth', null, ['class' => 'form-control'])!!}
     </div>
 
     <div class="form-group">

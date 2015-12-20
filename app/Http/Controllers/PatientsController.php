@@ -3,16 +3,15 @@
 namespace App\Http\Controllers;
 
 use \App\Patient;
-use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Request;
 
 class PatientsController extends Controller
 {
   public function index()
   {
-    $patients = Patient::all();
+    $patients = Patient::latest()->get();
 
     return view('patients.index', compact('patients'));
   }
@@ -30,6 +29,9 @@ class PatientsController extends Controller
   }
 
   public function store() {
-    
+
+    Patient::create(Request::all());
+
+    return redirect('patients');
   }
 }

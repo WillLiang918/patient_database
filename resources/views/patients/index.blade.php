@@ -15,8 +15,6 @@
     <div>
       DOB: {{ $patient->date_of_birth }} </br>
       Age: {{ $patient->age }} </br>
-      Address: {{ $patient->address }} </br>
-      Phone Number: {{ $patient->phone_number }} </br>
     </div>
 
   @endforeach
