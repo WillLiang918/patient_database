@@ -2,6 +2,8 @@
 
 @section('content')
 
+  <a class="btn btn-link" href="{{ url('/patients/create') }}">Add a New Patient</a>
+  
   @foreach($patients as $patient)
     <article>
       <h3>

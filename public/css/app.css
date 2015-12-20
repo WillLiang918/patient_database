@@ -7,3 +7,31 @@ label,
 .checkbox label {
   font-weight: 300;
 }
+
+.group::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.header {
+  height: 50px;
+  border-bottom: 2px solid black;
+}
+
+.header > * {
+  margin: 0;
+}
+
+.header h1 {
+  float: left;
+}
+
+.header button {
+  margin-top: 5px;
+  float: right;
+}
+
+.new-patient-button {
+  margin-top: 5px;
+}

@@ -9,7 +9,13 @@
    </head>
    <body>
      <div class="container">
-       <!-- @include('partials.flash') -->
+       @if (\Auth::user())
+         <div class="header group">
+           <h1>Dr. {!! \Auth::user()->name !!}</h1>
+           <button type="button" name="button">Logout</button>
+         </div>
+       @endif
+
        @include('flash::message')
 
        @yield('content')
