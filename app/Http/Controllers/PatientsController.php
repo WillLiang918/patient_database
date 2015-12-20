@@ -7,10 +7,16 @@ use App\Http\Requests;
 use App\Http\Requests\PatientRequest;
 use Illuminate\HttpResponse;
 use App\Http\Controllers\Controller;
-// use Request;
+use App\Http\Middleware;
 
 class PatientsController extends Controller
 {
+
+  public function __construct()
+  {
+    $this->middleware('auth', ['only' => 'create']);
+  }
+
   public function index()
   {
     $patients = Patient::latest()->get();
@@ -30,9 +36,11 @@ class PatientsController extends Controller
     return view('patients.create');
   }
 
-  public function store(PatientRequest $request) {
+  public function store(PatientRequest $request)
+  {
+    $patient = new Patient($request->all());
 
-    Patient::create($request->all());
+    \Auth::user()->patients()->save($patient);
 
     return redirect('patients');
   }

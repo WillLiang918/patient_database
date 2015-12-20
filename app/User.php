@@ -43,4 +43,9 @@ class User extends Model implements AuthenticatableContract,
     {
       return $this->hasMany('App\Patient');
     }
+
+    public function isAnAdmin()
+    {
+      return true;
+    }
 }

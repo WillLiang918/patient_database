@@ -20,3 +20,9 @@ Route::controllers([
   'auth' => 'Auth\AuthController',
   'password' => 'Auth\PasswordController'
 ]);
+
+Route::get('admin', ['middleware' => 'admin', function ()
+  {
+    return 'This page may only be viewed by admins';
+  }
+]);
