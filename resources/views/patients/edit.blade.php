@@ -5,10 +5,10 @@
 
   {!! Form::model($patient, ['method' => 'PATCH', 'action' => ['PatientsController@update', $patient->id]]) !!}
 
-    @include ('patients.form', ['submitButtonText' => 'Update Patient']);
+    @include ('patients.form', ['submitButtonText' => 'Update Patient'])
 
   {!! Form::close() !!}
 
-  @include ('errors.list');
+  @include ('errors.list')
 
 @stop

@@ -7,10 +7,10 @@
 
   {!! Form::open(['url' => 'patients']) !!}
 
-    @include ('patients.form', ['submitButtonText' => 'Add Patient'] );
+    @include ('patients.form', ['submitButtonText' => 'Add Patient'] )
 
   {!! Form::close() !!}
 
-  @include ('errors.list');
+  @include ('errors.list')
 
 @stop

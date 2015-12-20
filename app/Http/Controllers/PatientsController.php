@@ -24,10 +24,8 @@ class PatientsController extends Controller
     return view('patients.index', compact('patients'));
   }
 
-  public function show($id)
+  public function show(Patient $patient)
   {
-    $patient = Patient::findorfail($id);
-
     return view('patients.show', compact('patient'));
   }
 
@@ -45,17 +43,13 @@ class PatientsController extends Controller
     return redirect('patients');
   }
 
-  public function edit($id)
+  public function edit(Patient $patient)
   {
-    $patient = Patient::findorfail($id);
-
     return view('patients.edit', compact('patient'));
   }
 
-  public function update($id, PatientRequest $request)
+  public function update(Patient $patient, PatientRequest $request)
   {
-    $patient = Patient::findorfail($id);
-
     $patient->update($request->all());
 
     return redirect('patients');
