@@ -23,4 +23,13 @@ class PatientsController extends Controller
 
     return view('patients.show', compact('patient'));
   }
+
+  public function create()
+  {
+    return view('patients.create');
+  }
+
+  public function store() {
+    
+  }
 }

@@ -17,5 +17,8 @@ Route::get('/', function () {
 
 Route::get('about', 'PagesController@about');
 Route::get('contact', 'PagesController@contact');
+
 Route::get('patients', 'PatientsController@index');
+Route::get('patients/create', 'PatientsController@create');
 Route::get('patients/{id}', 'PatientsController@show');
+Route::post('patients', 'PatientsController@store');

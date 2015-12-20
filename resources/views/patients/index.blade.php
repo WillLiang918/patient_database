@@ -6,7 +6,7 @@
   @foreach($patients as $patient)
     <article>
       <h2>
-        <a href="#">
+        <a href="{{ url('/patients', $patient->id) }}">
           {{ $patient->name }}
         </a>
       </h2>
