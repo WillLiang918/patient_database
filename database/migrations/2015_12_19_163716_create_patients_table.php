@@ -20,7 +20,7 @@ class CreatePatientsTable extends Migration
             $table->text('phone_number');
             $table->date('date_of_birth');
             $table->integer('age');
-            $table->timestamps();
+            $table->nullableTimestamps();
 
             $table->foreign('user_id')
                   ->references('id')

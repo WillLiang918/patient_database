@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('password', 60);
             $table->rememberToken();
             $table->string('last_session_id')->nullable();
-            $table->timestamps();
+            $table->nullableTimestamps();
         });
     }
 

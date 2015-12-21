@@ -32,6 +32,10 @@ label,
   float: right;
 }
 
-.new-patient-button {
+.patient-button {
   margin-top: 5px;
+}
+
+.new-patient-button {
+  float: right; 
 }

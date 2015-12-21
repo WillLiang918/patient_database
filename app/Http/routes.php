@@ -15,6 +15,7 @@ Route::get('about', 'PagesController@about');
 Route::get('contact', 'PagesController@contact');
 
 Route::resource('patients', 'PatientsController');
+Route::get('my_patients', 'PatientsController@myPatients');
 
 Route::controllers([
   'auth' => 'Auth\AuthController',

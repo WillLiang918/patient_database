@@ -24,6 +24,13 @@ class PatientsController extends Controller
     return view('patients.index', compact('patients'));
   }
 
+  public function myPatients()
+  {
+    $patients = Patient::latest()->where('user_id', \Auth::user()->id)->get();
+
+    return view('patients.index', compact('patients'));
+  }
+
   public function show(Patient $patient)
   {
     return view('patients.show', compact('patient'));

@@ -2,8 +2,6 @@
 
 @section('content')
 
-  <a class="new-patient-button btn btn-primary" href="{{ url('/patients/create') }}">Add a New Patient</a>
-
   @foreach($patients as $patient)
     <article>
       <h3>
@@ -16,6 +14,8 @@
     <div>
       DOB: {{ $patient->date_of_birth }} </br>
       Age: {{ $patient->age }} </br>
+      Doctor: {{ $patient->doctor->name }} </br>
+
     </div>
 
   @endforeach
