@@ -14,12 +14,12 @@
            <h1>Dr. {!! \Auth::user()->name !!}</h1>
            <a class="btn btn-primary" href="{{ url('/auth/logout') }}">Logout</a>
          </div>
+         <a class="patient-button btn btn-primary" href="{{ url('/my_patients') }}">My Patients</a>
+         <a class="patient-button btn btn-primary" href="{{ url('/patients') }}">All Patients</a>
+         <a class="patient-button new-patient-button btn btn-primary" href="{{ url('/patients/create') }}">Add a New Patient</a>
        @endif
 
-       <a class="patient-button btn btn-primary" href="{{ url('/my_patients') }}">My Patients</a>
-       <a class="patient-button btn btn-primary" href="{{ url('/patients') }}">All Patients</a>
-       <a class="patient-button new-patient-button btn btn-primary" href="{{ url('/patients/create') }}">Add a New Patient</a>
-       
+
        @include('flash::message')
 
        @yield('content')

@@ -20,7 +20,8 @@ This appplication allows doctors to view patient information.
 - Bootstrap
 
 ## How to RUN
-git clone https://github.com/WillLiang918/sample_app_project.git  
+git clone https://github.com/WillLiang918/sample_app_project.git
+rename .env.example to .env and replace APP_KEY with key from email
 php artisan migrate:refresh --seed  
 php -S localhost:8888 -t public
 
