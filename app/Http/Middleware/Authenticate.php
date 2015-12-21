@@ -42,6 +42,11 @@ class Authenticate
             }
         }
 
+        if(session_id() != \Auth::user()->last_session){
+          Auth::logout();
+          return true;
+        }
+
         return $next($request);
     }
 }

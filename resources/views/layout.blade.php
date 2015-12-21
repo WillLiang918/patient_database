@@ -12,7 +12,7 @@
        @if (\Auth::user())
          <div class="header group">
            <h1>Dr. {!! \Auth::user()->name !!}</h1>
-           <button type="button" name="button">Logout</button>
+           <a class="btn btn-primary" href="{{ url('/auth/logout') }}">Logout</a>
          </div>
        @endif
 

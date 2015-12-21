@@ -21,6 +21,8 @@ Route::controllers([
   'password' => 'Auth\PasswordController'
 ]);
 
+Route::get('/', 'PatientsController@index');
+
 Route::get('admin', ['middleware' => 'admin', function ()
   {
     return 'This page may only be viewed by admins';
